@@ -39,9 +39,18 @@ import SimpleITK as sitk
 
 I7 = sitk.ReadImage('D:/SIT/FIPL/Dataset/synthetic.jpg')
 nda=sitk.GetArrayFromImage(I7)
-plt.imshow(nda)
-plt.show()
+#plt.imshow(nda)
+#plt.show()
 
 import cv2 as cv
 
 I= cv.imread('D:/SIT/FIPL/Dataset/monalisa.jpg')
+#plt.imshow(I)
+#plt.show() 
+
+print(I.shape)
+
+width = I.shape[1]
+height = I.shape[0]
+
+print(f'the width of the original image: {width}\nthe height of the original image: {height}')
