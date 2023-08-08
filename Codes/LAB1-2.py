@@ -41,3 +41,7 @@ I7 = sitk.ReadImage('D:/SIT/FIPL/Dataset/synthetic.jpg')
 nda=sitk.GetArrayFromImage(I7)
 plt.imshow(nda)
 plt.show()
+
+import cv2 as cv
+
+I= cv.imread('D:/SIT/FIPL/Dataset/monalisa.jpg')
