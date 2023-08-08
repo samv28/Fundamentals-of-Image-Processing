@@ -54,3 +54,36 @@ width = I.shape[1]
 height = I.shape[0]
 
 print(f'the width of the original image: {width}\nthe height of the original image: {height}')
+
+W=1024
+H=1024
+New_img = cv2.resize(I,(W,H),interpolation=cv2.INTER_NEAREST)
+
+#plt.imshow(New_img)
+#plt.show()
+
+scale = 50
+W1 = int(I.shape[1]*scale/100)
+H1 = int(I.shape[0]*scale/100)
+
+New_img1 = cv2.resize(I,(W1,H1),interpolation=cv2.INTER_AREA)
+
+#plt.imshow(New_img1)
+#plt.show()
+
+print(f'the width of the resized image: {New_img1.shape[1]}\nthe height of the resized image: {New_img1.shape[0]}')
+
+r_img = cv2.rotate(New_img1, cv2.ROTATE_90_CLOCKWISE)
+#plt.imshow(r_img)
+#plt.show() 
+
+center = (width//2, height//2)
+
+rotate_matrix = cv2.getRotationMatrix2D(center=center, angle=45,scale=1)
+
+print(rotate_matrix)
+
+r_img2 = cv2.warpAffine(src=I, M=rotate_matrix, dsize=(width, height))
+
+plt.imshow(r_img2)
+plt.show()
