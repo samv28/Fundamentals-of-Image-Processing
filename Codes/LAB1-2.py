@@ -3,12 +3,12 @@ import matplotlib.pyplot as plt
 grey_img = cv2.imread("D:/SIT/FIPL/Dataset/agri_0_1017.jpeg",0)
 color_img = cv2.imread("D:/SIT/FIPL/Dataset/agri_0_1017.jpeg",1)[:, :,::-1]
 
-print(grey_img)
+#print(grey_img)
 #cv2.imshow('image',grey_img)
 cv2.waitKey(0)
 #cv2.imshow('image',color_img)
 cv2.waitKey(0)
-print(color_img.shape)
+#print(color_img.shape)
 
 monalisa = cv2.imread("FIPL/Dataset/monalisa.jpg",1)
 #cv2.imshow('image',monalisa[:,:,1])
@@ -59,8 +59,8 @@ W=1024
 H=1024
 New_img = cv2.resize(I,(W,H),interpolation=cv2.INTER_NEAREST)
 
-#plt.imshow(New_img)
-#plt.show()
+plt.imshow(New_img)
+plt.show()
 
 scale = 50
 W1 = int(I.shape[1]*scale/100)
@@ -68,14 +68,14 @@ H1 = int(I.shape[0]*scale/100)
 
 New_img1 = cv2.resize(I,(W1,H1),interpolation=cv2.INTER_AREA)
 
-#plt.imshow(New_img1)
-#plt.show()
+plt.imshow(New_img1)
+plt.show()
 
 print(f'the width of the resized image: {New_img1.shape[1]}\nthe height of the resized image: {New_img1.shape[0]}')
 
 r_img = cv2.rotate(New_img1, cv2.ROTATE_90_CLOCKWISE)
-#plt.imshow(r_img)
-#plt.show() 
+plt.imshow(r_img)
+plt.show() 
 
 center = (width//2, height//2)
 
